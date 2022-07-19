@@ -1,0 +1,27 @@
+.content-body       { width: 900px; height: auto; margin: auto; color-adjust:exact; -webkit-print-color-adjust: exact; font-family: Arial, Helvetica, sans-serif;}
+
+/************* GERAR CONTRATO ****************/
+
+.logo               { margin: auto; display: block; -webkit-print-color-adjust: exact;}
+.select-contract-model{ margin-bottom: 20px;}
+.fixed-header       { margin: 40px; }
+textarea            { border: none; width: 100%; background-color: #eee; margin-left: 0; border-radius: 5px 5px 0 0;}
+
+/**************** CONTRATO ****************/
+h4                  { text-align: center; text-transform: uppercase;}
+p                   { margin: 20px 0 20px 0;}
+li                  { list-style: none;}
+.text-red           { color: red;}
+.display-inline     { display:inline-block}
+.hide               { display: none;}
+.table-plan-type    { margin: 20px 0px 20px 0px;}
+.current-date       { margin: auto; width: 100%; text-align: center;}
+.spacement          { margin: 40px 0 40px 0;}
+.text-padding       { padding: 6px;}
+
+/********** CONFIGURAÇÃO DE IMPRESSÃO **************/
+@media print {
+    .contract-generator, .show-contract-generator { display: none;}
+    .table-main         { page-break-after: always; width: 100%;}
+    .table-header       { display:table-header-group;}
+}

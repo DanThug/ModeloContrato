@@ -1,0 +1,186 @@
+<div class="row"><!-- row 1 -->
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>CNPJ:</label>
+            <input type="text" id="getEmployerCnpj" class="form-control" value="" maxlength="18" placeholder="__.___.___/____-__" autofocus="">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Tipo:</label>
+            <select id="getPlanType" class="form-control">
+                <option value="Mensal">Mensal</option>
+                <option value="Anual">Anual</option>   
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Versão:</label>
+            <select id="getSystemVersion" class="form-control">
+                <option value="RHID">RHiD</option>
+                <option value="PONTO OFFLINE">Ponto Offline</option>
+                <option value="ACESSO OFFLINE">Acesso Offline</option>
+                <option value="PONTO WEB BASIC">Ponto Web (Basic)</option>
+                <option value="PONTO WEB PRO">Ponto Web (Pro)</option>
+                <option value="PONTO WEB ULTIMATE">Ponto Web (Ultimate)</option>
+            </select>
+        </div>
+    </div>
+</div><!------ row 1 ------->
+
+<div class="row"><!-- row 2 -->
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Quant Funcionários:</label>
+            <input type="text" id="getAmountEmployees" name="getAmountEmployees" class="form-control" value="200">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Quant CNPJ:</label>
+            <input type="number" id="getAmountCnpj" name="getAmountCnpj" class="form-control" value="1">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Quant Equipamentos:</label>
+            <input type="number" id="getAmountEquip" name="getAmountEquip" class="form-control" value="0">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Valor:</label>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">R$</span>
+                <input type="text" id="getPrice" name="getPrice" class="form-control" placeholder="000,00" value="">
+            </div>
+        </div>
+    </div>
+</div><!------ row 2 ------->
+
+<div class="row"><!-- row 3 --><!-- Botoes GERAR CONTRATO, IMPRIMIR E + -->
+    <div class="col-md-4">
+        <div class="form-group">
+            <button type="button" id="generateContractButton" class="btn btn-primary btn-block">Gerar Contrato</button>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <button type="button" class="btn btn-warning btn-block" onclick="print()">Imprimir</button>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+            <button type="button" id="show-hide-button" class="btn btn-success btn-block">
+                <label data-js="plus-minus-icon" class="glyphicon glyphicon-plus" aria-hidden="true"></label>
+            </button>
+        </div>
+    </div>
+</div><!------ row 3 -------><!-- Botoes GERAR CONTRATO, IMPRIMIR E + -->
+
+<div data-js="new-employer" class="hide"><!-- ADICIONAR NOVA EMPRESA -->
+    <form action="" id="newEmployerForm" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-info text-center" role="alert">
+                    <strong>Gerar Cadastro de Novo Cliente</strong>
+                </div>
+            </div>
+        </div>
+        <div class="row"><!-- row 4 -->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>CNPJ: </label>
+                    <input type="text" id="newEmployerCnpj" name="newEmployerCnpj" maxlength="18" class="form-control" placeholder="__.___.___/____-__">
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Razão Social: </label>
+                    <input type="text" id="newEmployerName" name="newEmployerName" class="form-control" placeholder="Razão Social">
+                </div>
+            </div>
+        </div><!------ row 4 ------->
+
+        <div class="row"><!-- row 5 -->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>CEP: </label>
+                    <input type="text" id="newEmployerAddressZipcode" name="newEmployerAddressZipcode" maxlength="9" class="form-control" placeholder="_____-___">
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Logradouro: </label>
+                    <input type="text" id="newEmployerAddress" name="newEmployerAddress" class="form-control" placeholder="Logradouro">
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Nº: </label>
+                    <input type="text" id="newEmployerAddressNumber" name="newEmployerAddressNumber" class="form-control" placeholder="Nº">
+                </div>
+            </div>
+        </div><!------ row 5 ------->
+
+        <div class="row"><!-- row 6 -->
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label>Bairro: </label>
+                    <input type="text" id="newEmployerAddressDistrict" name="newEmployerAddressDistrict" class="form-control" placeholder="Bairro">
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label>Cidade: </label>
+                    <input type="text" id="newEmployerAddressCity" name="newEmployerAddressCity" class="form-control" placeholder="Cidade" value="São Paulo">
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Estado: </label>
+                    <input type="text" id="newEmployerAddressState" name="newEmployerAddressState" class="form-control" placeholder="SP" value="SP">
+                </div>
+            </div>
+        </div><!------ row 6 ------->
+
+        <div class="row"><!-- row 7 -->
+            <div class="col-md-8">
+                <div class="form-group">
+                    <button type="submit" id="newEmployerGenerateButton" class="btn btn-info btn-block">Adicionar</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button type="reset" class="btn btn-danger btn-block">Limpar</button>
+                </div>
+            </div>
+        </div><!------ row 7 ------->
+
+        <div class="row"><!-- row 8 -->
+            <div class="col-md-12">
+                <textarea id="newEmployerTextarea" rows="12"></textarea>  
+            </div>
+        </div><!------ row 8 ------->
+
+        <div class="row"><!-- row 9 -->
+            <div class="col-md-12">
+                <div class="form-group">
+                    <button type="button" id="newEmployerCopyButton" class="btn btn-secondary btn-block">Copiar Dados</button>
+                </div>  
+            </div>
+        </div><!------ row 9 ------->
+    </form>
+</div><!-- ADICIONAR NOVA EMPRESA -->
+<script src="script.js"></script>
+<script src="clients.js"></script>
+<!-- Mascara CNPJ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>

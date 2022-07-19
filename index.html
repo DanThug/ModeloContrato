@@ -1,0 +1,65 @@
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Contratos</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <div class="content-body"><!----- CORPO COMPLETO DO CONTEUDO ------>
+        <table class="table-main" border="0">
+            <thead class="table-header">
+                <tr>
+                    <th>
+                        <div class="fixed-header">
+                            <img src="https://www.massistec.com.br/images/logo-g.png" class="logo" width="120" align="center" alt="Logo">
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+              <tr>
+                <td class="contract-generator">
+                  <div class="row">
+                    <div class="col-md-12">
+                        <select class="form-control input-lg select-contract-model" data-js="select-contract-model">
+                            <option value="">Selecione um modelo de contrato...</option>
+                            <option value="contratos/pontoWeb.html" >Ponto Web</option>
+                            <option value="contratos/pontoOffline.html" >Ponto Offline</option>
+                            <option value="contratos/acessoOffline.html" >Acesso Offline</option>
+                        </select>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+                <tr>
+                    <td>
+                        <div data-js="show-contract-generator" class="show-contract-generator">
+                            <!-- O conteudo do contrato será gerado aqui -->
+                        </div>
+                        <div data-js="show-contract-selected" class="show-contract-selected">
+                            <!-- O conteudo do contrato será gerado aqui -->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('[data-js="show-contract-generator"]').load('contract_generator.html');
+            
+            $('[data-js="select-contract-model"]').change(ev => {
+                $('[data-js="select-contract-model"]').val() === '' ?  $('[data-js="show-contract-selected"]').text('') : $('[data-js="show-contract-selected"]').load(ev.target.value);
+            });
+        });
+    </script>
+</body>
+</html>
